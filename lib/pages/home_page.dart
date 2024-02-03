@@ -48,12 +48,12 @@ class _HomePageState extends State<HomePage> {
         return Row(
           children: [
             SizedBox(
-              width: 270,
+              width: 220,
               height: double.infinity,
               child: drawerMethod(context),
             ),
             SizedBox(
-              width: 850,
+              width: 880,
               height: double.infinity,
               child: homePage(),
             ),
