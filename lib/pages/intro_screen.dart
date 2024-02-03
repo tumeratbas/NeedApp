@@ -12,7 +12,6 @@ class IntroScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // big logo
             Padding(
               padding: const EdgeInsets.only(
                 left: 100.0,

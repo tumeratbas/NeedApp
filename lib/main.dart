@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:needApp/model/cart_model.dart';
-import 'package:needApp/pages/intro_screen.dart';
-import 'package:needApp/pages/login_page.dart';
-import 'package:needApp/pages/profie_page.dart';
+import 'package:needapp/model/cart_model.dart';
+import 'package:needapp/pages/contact.dart';
+import 'package:needapp/pages/home_page.dart';
+import 'package:needapp/pages/intro_screen.dart';
 import 'package:provider/provider.dart';
-// import 'pages/intro_screen.dart';
-// import 'pages/login_page.dart';
+import 'package:needapp/pages/login_page.dart';
+import 'pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +20,11 @@ class MyApp extends StatelessWidget {
       create: (context) => CartModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute:'/login', // Başlangıç ekranınızın rotası
+        initialRoute:'/home', // Başlangıç ekranınızın rotası
         routes: {
+          '/register': (context) => RegisterPage(),
+          '/contact': (context) => ContactPage(),
+          '/home': (context) => HomePage(),
          '/login': (context) => LoginScreen(), // Login ekranınızın rotası
         '/intro': (context) => IntroScreen(), //intro yazicam
         },

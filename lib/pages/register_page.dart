@@ -1,21 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:needapp/pages/home_page.dart';
-import 'package:needapp/pages/register_page.dart';
 
-void main() => runApp(
-  MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: LoginScreen(),
-  ),
-);
-
-class LoginScreen extends StatelessWidget {
-  // Kullanıcı adı ve şifre doğrulaması için örnek bilgiler
-  final String validUsername = "t";
-  final String validPassword = "t";
-
-  // Controller'lar kullanıcı adı ve şifre bilgilerini tutar
+class RegisterPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -44,9 +31,9 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    FadeInUp(duration: Duration(milliseconds: 1000), child: Text("Login", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                    FadeInUp(duration: Duration(milliseconds: 1000), child: Text("Create Your Account", style: TextStyle(color: Colors.white, fontSize: 40),)),
                     SizedBox(height: 10,),
-                    FadeInUp(duration: Duration(milliseconds: 1300), child: Text("Welcome Back", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                    FadeInUp(duration: Duration(milliseconds: 1300), child: Text("Welcome", style: TextStyle(color: Colors.white, fontSize: 18),)),
                   ],
                 ),
               ),
@@ -105,44 +92,23 @@ class LoginScreen extends StatelessWidget {
                           ],
                         ),
                       )),
-                      SizedBox(height: 10,),
-                      FadeInUp(duration: Duration(milliseconds: 1600), child: TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => RegisterPage()),
-                            );
-                        },
-                        child: Text("Forgot Password?", style: TextStyle(color: Colors.grey)),
-                      )),
-                      SizedBox(height: 10,),
-                      
-                      // Create an Account
-                      FadeInUp(duration: Duration(milliseconds: 1600), child: TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => RegisterPage()),
-                            );
-                        },
-                        child: Text("Create an Account", style: TextStyle(color: Colors.green)),
-                      )),
 
                       SizedBox(height: 40,),
-
                       FadeInUp(duration: Duration(milliseconds: 1700), child: MaterialButton(
                         onPressed: () {
                           // Kullanıcı adı ve şifre kontrolü
-                          if (usernameController.text == validUsername && passwordController.text == validPassword) {
-                            print("Login Successful");
+                          if (isValidInput()) {
+                            // Başarılı giriş, burada istediğiniz navigasyonu yapabilirsiniz.
+                            print("Register Successful");
                             showSuccessSnackBar(context);
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(builder: (context) => HomePage()),
-                            );
+                             Navigator.pushReplacement(
+                               context,
+                               MaterialPageRoute(builder: (context) => HomePage()),
+                             );
                           } else {
-                            print("Login Failed");
-                            showFailedSnackBar(context);
+                            // Başarısız giriş, hata mesajı gösterebilirsiniz.
+                            print("Register Failed");
+                            showFailedSnackBar(context, "Please fill in all fields");
                           }
                         },
                         height: 50,
@@ -151,41 +117,13 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Center(
-                          child: Text("Login", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                          child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                         ),
                       )),
                       SizedBox(height: 50,),
-                      FadeInUp(duration: Duration(milliseconds: 1800), child: Text("Continue with social media", style: TextStyle(color: Colors.grey),)),
-                      SizedBox(height: 30,),
                       Row(
                         children: <Widget>[
-                          Expanded(
-                            child: FadeInUp(duration: Duration(milliseconds: 1900), child: MaterialButton(
-                              onPressed: (){},
-                              height: 50,
-                              color: Colors.blue,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Center(
-                                child: Text("Facebook", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                              ),
-                            )),
-                          ),
                           SizedBox(width: 30,),
-                          Expanded(
-                            child: FadeInUp(duration: Duration(milliseconds: 2000), child: MaterialButton(
-                              onPressed: () {},
-                              height: 50,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              color: Color.fromARGB(255, 194, 21, 21),
-                              child: Center(
-                                child: Text("Google", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                              ),
-                            )),
-                          )
                         ],
                       )
                     ],
@@ -199,24 +137,27 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  // Başarılı giriş bildirimini gösteren metod
+  bool isValidInput() {
+    return usernameController.text.isNotEmpty && passwordController.text.isNotEmpty;
+  }
+
+  // Başarılı kayıt bildirimini gösteren metod
   void showSuccessSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Login Successful'),
+        content: Text('Registration Successful'),
         backgroundColor: Colors.green,
       ),
     );
   }
 
-  // Başarısız giriş bildirimini gösteren metod
-  void showFailedSnackBar(BuildContext context) {
+  // Başarısız kayıt bildirimini gösteren metod
+  void showFailedSnackBar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Login Failed'),
+        content: Text(message),
         backgroundColor: Colors.red,
       ),
     );
   }
 }
-
