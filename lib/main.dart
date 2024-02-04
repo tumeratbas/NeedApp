@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       create: (context) => CartModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute:'/home', // Başlangıç ekranınızın rotası
+        initialRoute:'/login', // Başlangıç ekranınızın rotası
         routes: {
           '/register': (context) => RegisterPage(),
           '/contact': (context) => ContactPage(),
