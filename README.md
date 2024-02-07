@@ -1,23 +1,25 @@
 
 # NeedApp
-## Bir Alışveriş Uygulaması
+## Shopping App
 
-Bu proje, Flutter kullanarak yapılan basit bir alışveriş uygulaması örneğidir.
+This project is an example of a simple shopping application using Flutter.
 
-## Ekran Görüntüleri
-### GİRİŞ EKRANI
-![LOGIN](https://github.com/tumeratbas/NeedApp/assets/115020587/50d8e176-ca17-49a6-b5b4-141f75b4a2bb)
-### HOŞGELDİN EKRANI
-![WELCOME](https://github.com/tumeratbas/NeedApp/assets/115020587/52a683f1-017b-487f-aee6-30bf17292973)
+## Screenshots
+### LOGIN PAGE
+![LOGIN](https://github.com/tumeratbas/NeedApp/assets/115020587/06d20ce1-368e-443d-af98-50392d53a15c)
+### REGISTER SCREEN
+![REGISTER](https://github.com/tumeratbas/NeedApp/assets/115020587/42881acd-b0e5-421f-99f5-8e1ccc09d516)
 ### HOME SCREEN
-![HP2](https://github.com/tumeratbas/NeedApp/assets/115020587/d20c638c-fa1c-4b6e-9626-1f63f28d3198)
-![HOMEPAGE](https://github.com/tumeratbas/NeedApp/assets/115020587/5a4dd051-4863-4341-8c7f-df9a270e4b0e)
+![HOME](https://github.com/tumeratbas/NeedApp/assets/115020587/afca0add-6cea-489b-be31-78713e8d023a)
+
+![HOME2](https://github.com/tumeratbas/NeedApp/assets/115020587/11cc5f27-7643-4319-8a7a-530514b27f06)
 ### MY CART
-![CARD](https://github.com/tumeratbas/NeedApp/assets/115020587/0d8cc7b9-a2ab-46ad-af75-3aa9caaf730f)
+![CART](https://github.com/tumeratbas/NeedApp/assets/115020587/5cfac438-7161-46a9-bbd6-11da6eab3a59)
+
+![CART2](https://github.com/tumeratbas/NeedApp/assets/115020587/51eee411-732d-4329-ac41-6bc3fa5ce31e)
 ### DRAWER
-![DRAWER](https://github.com/tumeratbas/NeedApp/assets/115020587/e3989535-d03c-4c1e-a8c2-a117b4b60d8c)
-### PROFIL EKRANI
-![PROFILE](https://github.com/tumeratbas/NeedApp/assets/115020587/80b5c3c7-cacd-42f6-a753-abd8da4b9c55)
-
-
-  
+![DRAWER](https://github.com/tumeratbas/NeedApp/assets/115020587/26c9d404-f2ee-4ff1-8a25-4b7aff01459d)
+### PROFILE PAGE
+![PP](https://github.com/tumeratbas/NeedApp/assets/115020587/2ad9ca81-2a88-45ce-acf5-32d1e0dcb69f)
+### CONTACT
+![CONTACT](https://github.com/tumeratbas/NeedApp/assets/115020587/1b226ec1-fbf5-4aac-bc99-e7249232c90c)
